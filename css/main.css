@@ -1,0 +1,24 @@
+article {
+  width: 800px;
+  margin: 0px auto;
+}
+article form {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+article form textarea {
+  width: 788px;
+  padding: 5px;
+  height: 400px;
+}
+article #results,
+article #variables {
+  border: 1px solid #c3c3c3;
+  padding: 20px;
+  margin: 10px 0px;
+}
+article #variables {
+  height: 100px;
+  overflow-y: auto;
+}
