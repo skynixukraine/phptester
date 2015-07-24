@@ -1,4 +1,6 @@
 <?php
+chdir(__DIR__);
+
 /**
  * Created by PhpStorm.
  * User: alekseyyp
@@ -24,7 +26,7 @@ if ( isset( $_POST['val'] ) ) {
 
                 ob_clean();
                 var_dump( $v );
-                $variables[ $k ] = ob_get_contents();
+                $variables[] = "<b>" . $k . "</b>" . ob_get_contents();
 
             }
 
@@ -38,7 +40,9 @@ if ( isset( $_POST['val'] ) ) {
     ob_start();
     eval( $_POST['val'] );
     Variables::$data = get_defined_vars();
-
+    $fr = fopen( getcwd() . '/code.log', 'a+');
+    fwrite($fr, date('Y-m-d H:i:s') . "\n" . $_POST['val'] . "\n ------------ \n");
+    fclose($fr);
 
 } else {
 
